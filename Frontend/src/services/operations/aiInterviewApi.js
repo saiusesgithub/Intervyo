@@ -1,5 +1,5 @@
 import { toast } from 'react-hot-toast';
-import { apiConnector } from '../apiconnector';
+import { apiConnector } from '../apiConnector';
 import { interviewEndpoints } from '../apis';
 
 const INTERVIEW_ENDPOINTS = {

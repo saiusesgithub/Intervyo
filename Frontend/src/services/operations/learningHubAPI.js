@@ -1,5 +1,5 @@
 import { toast } from 'react-hot-toast';
-import { apiConnector } from '../apiconnector';
+import { apiConnector } from '../apiConnector';
 import { setUser, setLoading } from "../../slices/profileSlice";
 const LearningHubEndpoints = {
   GET_LEARNING_PROGRESS: 'https://intervyo.onrender.com/api/learning-hub/my-learning',

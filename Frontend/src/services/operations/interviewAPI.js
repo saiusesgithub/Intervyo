@@ -15,7 +15,7 @@ import {
   updatePerformance,
   updateProgress,
 } from "../../slices/interviewSlice";
-import { apiConnector } from "../apiconnector";
+import { apiConnector } from "../apiConnector";
 import { customToast } from "../../utils/toast";
 
 const {

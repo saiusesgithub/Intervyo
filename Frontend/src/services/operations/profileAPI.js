@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 import { profileEndpoints } from "../apis";
 import { setUser, setLoading } from "../../slices/profileSlice";
-import { apiConnector } from "../apiconnector";
+import { apiConnector } from "../apiConnector";
 
 const {
   GET_PROFILE_API,

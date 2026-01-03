@@ -3,7 +3,7 @@ import { setLoading, setToken, setSignupData } from '../../slices/authSlice';
 import { setUser } from '../../slices/profileSlice';
 import { authEndpoints} from '../apis.js';
 import { customToast } from '../../utils/toast';
-import { apiConnector } from '../apiconnector.js';
+import { apiConnector } from '../apiConnector.js';
 
 const { SEND_OTP_API,  REGISTER_API, LOGIN_API } = authEndpoints;
 
