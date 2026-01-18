@@ -35,8 +35,14 @@ services:
     environment:
       # Container-to-container networking uses the service name "mongo".
       MONGODB_URI: mongodb://mongo:27017/intervyo
+      # Public frontend URL used by the backend (HTTP/API).
       CLIENT_URL: http://localhost:5173
+      # Keep this in sync with CLIENT_URL; Socket.IO CORS should allow this origin.
       FRONTEND_URL: http://localhost:5173
+      # Optional: used by the backend to configure Socket.IO allowed origins.
+      # Backend/index.js should read this (e.g. process.env.SOCKET_IO_ORIGINS)
+      # instead of hardcoding origins, so WebSocket CORS matches the dev frontend URL.
+      SOCKET_IO_ORIGINS: http://localhost:5173
     volumes:
       # Source bind mount for live reload.
       - ./Backend:/app
