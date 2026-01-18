@@ -197,6 +197,29 @@ AI_API_KEY=your_ai_api_key
 
 ---
 
+## Docker (Optional)
+
+This setup is for local development only and does not change the default workflows.
+
+1) Create any needed backend env values (optional). The Docker Compose config uses
+`Backend/.env.example` by default and overrides the MongoDB host.
+
+2) Start the stack:
+```
+docker compose up --build
+```
+
+Frontend: http://localhost:5173  
+Backend: http://localhost:5000  
+
+If you want to point the frontend to a different API URL, set
+`VITE_API_BASE_URL` before building.
+
+---
+
+For a deeper walkthrough and rationale, see `docker_guide.md`.
+
+
 ## 🚦 Current Status
 
 - Core interview flow implemented  
