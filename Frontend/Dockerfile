@@ -42,6 +42,8 @@ FROM base AS dev
 COPY --from=deps /app/node_modules /app/node_modules
 
 # Copy the full source after deps to maximize cache hits.
+# Note: when using docker-compose for local dev, a bind mount will overlay /app,
+# so this COPY is primarily for standalone `docker build`/`docker run` workflows.
 COPY . .
 
 # Expose the Vite dev server port.
