@@ -200,13 +200,15 @@ Stages:
 
 #### Note on npm peer dependencies
 
-The frontend container uses a Docker-only workaround by default because npm
-strict peer dependency resolution can fail when upstream packages have not yet
-updated peer ranges for newer React major versions. This is controlled via:
-- `NPM_LEGACY_PEER_DEPS` build arg (defaults to `true`)
+The frontend container disables npm's strict peer dependency resolution via
+the `NPM_CONFIG_STRICT_PEER_DEPS=false` environment variable. This prevents
+install failures when upstream packages have not yet updated peer ranges for
+newer React major versions.
 
-When enabled, the container runs `npm install --legacy-peer-deps` during image
-build so the dev workflow still works without changing application code.
+Because this behavior is configured globally through the environment, there is
+no separate Docker-only `--legacy-peer-deps` command or `NPM_LEGACY_PEER_DEPS`
+build argument; installs inside the container use the same non-strict behavior
+consistently.
 
 ---
 
